@@ -20,11 +20,11 @@ mason_lsp.setup({
 		"bashls",
 		"efm",
 		"sumneko_lua",
-		"clangd",
+		-- "clangd",
 		"gopls",
 		"pyright",
 		"tsserver",
-		"denols",
+		-- "denols",
 	},
 })
 
@@ -123,44 +123,44 @@ for _, server in ipairs(mason_lsp.get_installed_servers()) do
 				},
 			},
 		})
-	elseif server == "clangd" then
-		nvim_lsp.clangd.setup({
-			capabilities = vim.tbl_deep_extend("keep", { offsetEncoding = { "utf-16", "utf-8" } }, capabilities),
-			single_file_support = true,
-			on_attach = custom_attach,
-			cmd = {
-				"clangd",
-				"--background-index",
-				"--pch-storage=memory",
-				-- You MUST set this arg ↓ to your c/cpp compiler location (if not included)!
-				"--query-driver=/usr/bin/clang++,/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
-				"--clang-tidy",
-				"--all-scopes-completion",
-				"--completion-style=detailed",
-				"--header-insertion-decorators",
-				"--header-insertion=iwyu",
-			},
-			commands = {
-				ClangdSwitchSourceHeader = {
-					function()
-						switch_source_header_splitcmd(0, "edit")
-					end,
-					description = "Open source/header in current buffer",
-				},
-				ClangdSwitchSourceHeaderVSplit = {
-					function()
-						switch_source_header_splitcmd(0, "vsplit")
-					end,
-					description = "Open source/header in a new vsplit",
-				},
-				ClangdSwitchSourceHeaderSplit = {
-					function()
-						switch_source_header_splitcmd(0, "split")
-					end,
-					description = "Open source/header in a new split",
-				},
-			},
-		})
+	-- elseif server == "clangd" then
+	-- 	nvim_lsp.clangd.setup({
+	-- 		capabilities = vim.tbl_deep_extend("keep", { offsetEncoding = { "utf-16", "utf-8" } }, capabilities),
+	-- 		single_file_support = true,
+	-- 		on_attach = custom_attach,
+	-- 		cmd = {
+	-- 			"clangd",
+	-- 			"--background-index",
+	-- 			"--pch-storage=memory",
+	-- 			-- You MUST set this arg ↓ to your c/cpp compiler location (if not included)!
+	-- 			"--query-driver=/usr/bin/clang++,/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
+	-- 			"--clang-tidy",
+	-- 			"--all-scopes-completion",
+	-- 			"--completion-style=detailed",
+	-- 			"--header-insertion-decorators",
+	-- 			"--header-insertion=iwyu",
+	-- 		},
+	-- 		commands = {
+	-- 			ClangdSwitchSourceHeader = {
+	-- 				function()
+	-- 					switch_source_header_splitcmd(0, "edit")
+	-- 				end,
+	-- 				description = "Open source/header in current buffer",
+	-- 			},
+	-- 			ClangdSwitchSourceHeaderVSplit = {
+	-- 				function()
+	-- 					switch_source_header_splitcmd(0, "vsplit")
+	-- 				end,
+	-- 				description = "Open source/header in a new vsplit",
+	-- 			},
+	-- 			ClangdSwitchSourceHeaderSplit = {
+	-- 				function()
+	-- 					switch_source_header_splitcmd(0, "split")
+	-- 				end,
+	-- 				description = "Open source/header in a new split",
+	-- 			},
+	-- 		},
+	-- 	})
 	elseif server == "jsonls" then
 		nvim_lsp.jsonls.setup({
 			flags = { debounce_text_changes = 500 },
