@@ -96,11 +96,11 @@ function autocmd.load_autocmds()
 				"*",
 				[[setlocal formatoptions-=cro]],
 			},
-			{
-				"FileType",
-				"c,cpp",
-				"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
-			},
+			-- {
+			-- 	"FileType",
+			-- 	"c,cpp",
+			-- 	"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
+			-- },
 		},
 		yank = {
 			{
