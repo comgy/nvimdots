@@ -64,7 +64,7 @@ settings["palette_overwrite"] = {}
 -- Set the colorscheme to use here.
 -- Available values are: `catppuccin`, `catppuccin-latte`, `catppucin-mocha`, `catppuccin-frappe`, `catppuccin-macchiato`.
 ---@type string
-settings["colorscheme"] = "catppuccin"
+settings["colorscheme"] = "catppuccin-macchiato"
 
 -- Set it to true if your terminal has transparent background.
 ---@type boolean
@@ -101,11 +101,13 @@ settings["server_formatting_block_list"] = {
 ---@type string[]
 settings["lsp_deps"] = {
 	"bashls",
-	"clangd",
+	-- "clangd",
 	"html",
 	"jsonls",
 	"lua_ls",
-	"pylsp",
+  --"pylsp",
+	-- "pyright",
+	-- Uncomment the below line to make sure `gopls` installed by `mason`.
 	-- "gopls",
 }
 

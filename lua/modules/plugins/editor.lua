@@ -124,6 +124,9 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			config = require("editor.ts-context-commentstring"),
 		},
+		-- hotfix: https://github.com/nvim-treesitter/nvim-treesitter-angular/issues/3
+		{ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" },
+		{ "nvim-treesitter/playground" },
 	},
 }
 
