@@ -103,9 +103,9 @@ settings["lsp_deps"] = {
 	"bashls",
 	-- "clangd",
 	"html",
-	"jsonls",
+	-- "jsonls",
 	"lua_ls",
-  --"pylsp",
+	--"pylsp",
 	-- "pyright",
 	-- Uncomment the below line to make sure `gopls` installed by `mason`.
 	-- "gopls",
@@ -117,6 +117,7 @@ settings["lsp_deps"] = {
 -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins
 ---@type string[]
 settings["null_ls_deps"] = {
+	"biome",
 	"clang_format",
 	"gofumpt",
 	"goimports",

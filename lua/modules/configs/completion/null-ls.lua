@@ -20,13 +20,17 @@ return function()
 			filetypes = { "c", "cpp" },
 			extra_args = formatter_args("clang_format"),
 		}),
-		btns.formatting.prettier.with({
+		btns.formatting.biome.with({
 			filetypes = {
-				"vue",
 				"typescript",
 				"javascript",
 				"typescriptreact",
 				"javascriptreact",
+			},
+		}),
+		btns.formatting.prettier.with({
+			filetypes = {
+				"vue",
 				"yaml",
 				"html",
 				"css",
